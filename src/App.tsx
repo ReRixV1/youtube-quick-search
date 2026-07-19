@@ -13,8 +13,8 @@ function App() {
     }
 
     function handleKeyDown(e: KeyboardEvent) {
-      if (e.code == "KeyK" && e.metaKey) {
-        setShowPopup(!showPopup);
+      if (e.code === "KeyK" && (e.metaKey || e.ctrlKey)) {
+        setShowPopup(prev => !prev);
       }
       if (e.code == "Escape") {
         setShowPopup(false);
